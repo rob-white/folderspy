@@ -10,6 +10,13 @@
 * Python 2.7 & 3.4-3.7
 
 ## Installation
+
+### pipenv
+```sh
+pipenv install folderspy
+```
+
+### pip
 ```sh
 pip install folderspy
 ```
