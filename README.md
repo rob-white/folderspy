@@ -32,7 +32,7 @@ from folderspy import WatchableFolder, FolderSpy
 class SaveFolder(WatchableFolder):
 
     def __init__(self):
-        super(TestFolder, self).__init__()
+        super(SaveFolder, self).__init__()
 
         self.path = '/path/to/this/folder'
 
