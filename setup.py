@@ -4,8 +4,6 @@ https://github.com/requests/requests/blob/master/setup.py
 """
 import os
 import sys
-import ftplib
-import getpass
 from codecs import open
 from shutil import rmtree
 
