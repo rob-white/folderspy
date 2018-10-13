@@ -15,8 +15,8 @@ class Spy(object):
             sys.exit(0)
 
     @abstractmethod
-    def _event_loop(self, args):
+    def _event_loop(self, folders):
         """Kicks off the event loop that begins watching for events."""
 
-    def _setup_watchers(self, args):
+    def _setup_watchers(self, folders):
         """Setup watchers for all folders."""
