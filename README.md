@@ -44,7 +44,7 @@ class SaveFolder(WatchableFolder):
         print('An item was created in this folder!')
     
 
-FolderSpy().watch(SaveFolder)
+FolderSpy().watch(SaveFolder())
 ```
 
 ## Available Folder Events
