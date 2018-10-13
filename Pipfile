@@ -1,0 +1,12 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+pyinotify = {version = "*", platform_system = "== 'Linux'"}
+pywin32 = {version = "*", platform_system = "== 'Windows'"}
+
+[dev-packages]
+twine = "*"
+pytest = "*"
