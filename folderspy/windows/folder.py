@@ -1,9 +1,9 @@
 class WatchableFolder(object):
 
-    def __init__(self):
-        self.path = ''
-        self.recursive = False
-        self.listen_to = None
+    def __init__(self, path='', recursive=False, listen_to=None):
+        self.path = path
+        self.recursive = recursive
+        self.listen_to = listen_to
 
     def process_IN_CREATE(self, event):
         """A file/directory was created in watched directory."""

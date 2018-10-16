@@ -6,7 +6,8 @@ from folderspy.spy import Spy
 
 class FolderSpy(Spy):
 
-    def _event_loop(self, folders):
+    @staticmethod
+    def _event_loop(folders):
         """Kicks off the event loop that begins watching for events."""
 
         event_queue = queue.Queue()

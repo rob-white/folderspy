@@ -3,10 +3,10 @@ import pyinotify
 
 class WatchableFolder(pyinotify.ProcessEvent):
 
-    def __init__(self):
-        self.path = ''
-        self.recursive = False
-        self.listen_to = None
+    def __init__(self, path='', recursive=False, listen_to=None):
+        self.path = path
+        self.recursive = recursive
+        self.listen_to = listen_to
 
     def process_IN_ACCESS(self, event):
         """A file was accessed."""

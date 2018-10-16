@@ -5,18 +5,20 @@ from abc import abstractmethod
 
 class Spy(object):
 
-    def watch(self, *args):
+    @classmethod
+    def watch(cls, *args):
         """Set up watches and begin loop to trigger events on folders."""
 
-        self._setup_watchers(args)
+        cls._setup_watchers(args)
         try:
-            self._event_loop(args)
+            cls._event_loop(args)
         except KeyboardInterrupt:
             sys.exit(0)
 
-    @abstractmethod
-    def _event_loop(self, folders):
+    @staticmethod
+    def _event_loop(folders):
         """Kicks off the event loop that begins watching for events."""
 
-    def _setup_watchers(self, folders):
+    @staticmethod
+    def _setup_watchers(folders):
         """Setup watchers for all folders."""

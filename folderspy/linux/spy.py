@@ -7,7 +7,8 @@ from folderspy.spy import Spy
 
 class FolderSpy(Spy):
 
-    def _setup_watchers(self, folders):
+    @staticmethod
+    def _setup_watchers(folders):
         """Setup watchers for all folders."""
 
         manager = pyinotify.WatchManager()
@@ -21,7 +22,8 @@ class FolderSpy(Spy):
                 rec=folder.recursive
             )
 
-    def _event_loop(self, folders):
+    @staticmethod
+    def _event_loop(folders):
         """Kicks off the event loop that begins watching for events."""
 
         asyncore.loop()
