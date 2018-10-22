@@ -21,9 +21,9 @@ class FolderSpy(Spy):
                 proc_fun=folder,
                 rec=folder.recursive
             )
-
+    
     @staticmethod
-    def _event_loop(folders):
+    def _event_loop(folders, **kwargs):
         """Kicks off the event loop that begins watching for events."""
 
         asyncore.loop()

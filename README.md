@@ -6,7 +6,7 @@
 > Watch folders for file/directory events with a simple API.
 
 ## Supports
-* Linux & Windows
+* Linux, Windows, Mac
 * Python 2.7 & 3.4-3.7
 
 ## Installation
@@ -115,8 +115,34 @@ FolderSpy.watch(SaveFolder())
         """An event occurred that was on a directory."""
 ```
 
+### Mac
+```python
+    def process_IN_ATTRIB(self, event):
+        """Metadata changed for a file."""
+
+    def process_IN_CREATE(self, event):
+        """A file/directory was created in watched directory."""
+
+    def process_IN_DELETE(self, event):
+        """A file/directory was deleted in watched directory."""
+
+    def process_IN_MODIFY(self, event):
+        """A file was modified."""
+
+    def process_IN_MOVED_FROM(self, event):
+        """A file/directory was moved away from the current watched directory."""
+
+    def process_IN_MOVED_TO(self, event):
+        """A file/directory was moved into the current watched directory."""
+```
+
+## Dependencies
+* Linux: ```pyinotify```
+* Windows: ```pypiwin32```
+* Mac: ```macfsevents```
+
 ## To-Do
-* MacOS Support
+* Start/Exit Events
 * Tests
 * Clean-up
 

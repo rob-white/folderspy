@@ -6,15 +6,14 @@ from folderspy.spy import Spy
 
 class FolderSpy(Spy):
 
-    @staticmethod
-    def _event_loop(folders):
+    def _event_loop(self, folders, **kwargs):
         """Kicks off the event loop that begins watching for events."""
 
         event_queue = queue.Queue()
         for folder in folders:
             FolderWatcher(folder, queue=event_queue)
 
-        while 1:
+        while True:
             try:
                 folder, events = event_queue.get_nowait()
                 for event in events:

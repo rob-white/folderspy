@@ -5,8 +5,10 @@ name = "pypi"
 
 [packages]
 pyinotify = {version = "*", platform_system = "== 'Linux'"}
-pywin32 = {version = "*", platform_system = "== 'Windows'"}
+pypiwin32 = {version = "*", platform_system = "== 'Windows'"}
+macfsevents = {version = "*", platform_system = "== 'Darwin'"}
 
 [dev-packages]
 twine = "*"
 pytest = "*"
+pylint = "*"

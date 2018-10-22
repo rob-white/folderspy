@@ -8,17 +8,28 @@ class Spy(object):
     @classmethod
     def watch(cls, *args):
         """Set up watches and begin loop to trigger events on folders."""
+        
+        instance = cls()
 
-        cls._setup_watchers(args)
+        kwargs = instance._setup_watchers(args)
+        
         try:
-            cls._event_loop(args)
+            instance._event_loop(args, **kwargs)
         except KeyboardInterrupt:
+            for folder in args:
+                try:
+                    folder.on_exit()
+                except AttributeError:
+                    pass
+            
+            instance._on_exit(args, **kwargs)         
             sys.exit(0)
 
-    @staticmethod
-    def _event_loop(folders):
+    def _setup_watchers(self, folders):
+        """Setup watchers for all folders."""
+
+    def _event_loop(self, folders, **kwargs):
         """Kicks off the event loop that begins watching for events."""
 
-    @staticmethod
-    def _setup_watchers(folders):
-        """Setup watchers for all folders."""
+    def _on_exit(self, folders, **kwargs):
+        """Called when folder spying ends."""
