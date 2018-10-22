@@ -10,5 +10,4 @@ macfsevents = {version = "*", platform_system = "== 'Darwin'"}
 
 [dev-packages]
 twine = "*"
-pytest = "*"
 pylint = "*"

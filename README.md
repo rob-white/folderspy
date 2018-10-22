@@ -37,7 +37,7 @@ class SaveFolder(WatchableFolder):
         self.path = '/path/to/this/folder'
 
         # Note: Only used in Linux for pyinotify bitmasks
-        # Can be excluded for Windows
+        # Can be excluded for Windows/Mac
         self.listen_to = pyinotify.IN_CREATE
 
     def process_IN_CREATE(self, event):
