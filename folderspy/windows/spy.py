@@ -6,6 +6,11 @@ from folderspy.spy import Spy
 
 class FolderSpy(Spy):
 
+    def _setup_watchers(self, folders):
+        """Setup watchers for all folders."""
+        
+        return {}
+
     def _event_loop(self, folders, **kwargs):
         """Kicks off the event loop that begins watching for events."""
 
