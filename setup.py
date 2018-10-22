@@ -79,8 +79,7 @@ setup(
     packages=find_packages(exclude=['tests']),
     install_requires=[
         'pyinotify ; platform_system == "Linux"',
-        'pypiwin32 ; platform_system == "Windows"',
-        'MacFSEvents ; platform_system == "Darwin"'
+        'pypiwin32 ; platform_system == "Windows"'
     ],
     cmdclass={
         'publish': PublishCommand
